@@ -1,0 +1,179 @@
+/* src/App.css */
+.navbar{
+  position:sticky; top:0; z-index:30;
+  background:rgba(8, 14, 25, .7);
+  backdrop-filter: blur(10px);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.navbar .inner{
+  display:flex; align-items:center; justify-content:space-between;
+  height:64px;
+}
+.brand{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.5px;}
+.brand .logo{
+  width:28px; height:28px; display:grid; place-items:center; border-radius:8px;
+  background:linear-gradient(180deg,var(--accent), var(--accent2));
+  color:#031018; font-weight:900;
+}
+.nav{display:flex; gap:22px; align-items:center; font-weight:600; color:var(--muted);}
+.nav a{opacity:.9}
+.nav a:hover{color:var(--text)}
+
+.hero{
+  display:grid; gap:28px; align-items:center;
+  grid-template-columns: 1.15fr .85fr;
+}
+@media (max-width: 900px){ .hero{ grid-template-columns:1fr; } }
+
+.hero .left{ padding:28px; }
+.hero .right{ aspect-ratio: 1/1; display:grid; place-items:center; padding:18px; }
+.hero .photo{
+  width:100%; height:100%; border-radius:22px; overflow:hidden;
+  background: radial-gradient(400px 400px at 70% 30%, rgba(34,211,238,.25), transparent 60%), #0e182a;
+  border:1px solid rgba(255,255,255,.06);
+  box-shadow: var(--shadow);
+}
+.hero .photo img{ width:100%; height:100%; object-fit:cover; }
+
+.pills{ display:flex; gap:10px; margin-top:18px; flex-wrap:wrap;}
+.ctas{ display:flex; gap:12px; margin-top:22px; }
+
+.section-title{font-size:22px; color:var(--muted); letter-spacing:.1em; text-transform:uppercase;}
+.kicker{font-size:14px; color:var(--muted); text-transform:uppercase; letter-spacing:.18em;}
+
+.cards{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 900px){ .cards{ grid-template-columns: 1fr; } }
+
+.project{
+  padding:22px; display:flex; flex-direction:column; gap:14px;
+  transition: transform .08s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.project:hover{ transform: translateY(-2px); box-shadow:0 16px 40px rgba(0,0,0,.35); }
+.project .title{font-weight:700; font-size:18px;}
+.project .desc{color:var(--muted);}
+
+/* Contenedor */
+.hero .right .photo {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 280px;          /* alto mínimo del panel */
+  border-radius: 20px;        /* mismo redondeo del cuadro */
+  overflow: hidden;           /* evita que la imagen se salga */
+  box-shadow: 0 12px 36px rgba(0,0,0,.35);
+}
+
+/* Imagen que ocupa todo el cuadro */
+.hero .right .photo .avatar-full {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;          /* llena el cuadro sin deformarse */
+  border-radius: inherit;     /* hereda esquinas redondeadas */
+  display: block;
+}
+
+/* ======== GRID ======== */
+.projects-grid-hero{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 26px;
+}
+@media (max-width: 1100px){
+  .projects-grid-hero{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+@media (max-width: 720px){
+  .projects-grid-hero{ grid-template-columns: 1fr; }
+}
+
+/* ======== CARD ======== */
+.project-card-hero{
+  position: relative;
+  border-radius: 18px;
+  background: transparent; /* la card real es el panel */
+}
+
+/* Miniatura (parte superior) */
+.thumb-hero{
+  height: 210px;                /* ajusta a tu gusto (200–260) */
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(0,0,0,.28);
+}
+.thumb-hero img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;            /* llena sin deformar */
+  display: block;
+}
+
+/* Panel inferior (parte “tarjeta” como en tu ejemplo) */
+.panel-hero{
+  position: relative;
+  z-index: 2;
+  margin-top: -42px;            /* superpone sobre la miniatura */
+  padding: 18px 18px 16px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #0e1a27 0%, #0b1621 100%);
+  border: 1px solid rgba(255,255,255,.06);
+  box-shadow: 0 22px 48px rgba(0,0,0,.35);
+}
+
+/* Cabecera del panel: icono + título */
+.panel-head{
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.icon-wrap{
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  display: grid; place-items: center;
+  color: #8cd3ff;               /* color ícono */
+  background: rgba(140,211,255,.12);
+  border: 1px solid rgba(140,211,255,.18);
+}
+.panel-title{ margin: 0; }
+
+/* Descripción y tags */
+.panel-desc{ color: var(--muted); margin: 6px 0 8px; }
+.tags{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom: 10px; }
+.badge{
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  color: var(--text);
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.06);
+}
+
+/* Botones */
+.cta-row{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.08);
+  background: #0f2030;
+  color: var(--text);
+  text-decoration: none;
+  transition: transform .1s ease, background .15s ease, border-color .15s ease;
+}
+.btn:hover{ transform: translateY(-1px); }
+.btn--accent{
+  background: linear-gradient(90deg, var(--accent2), var(--accent));
+  color: #031018;
+  border: none;
+}
+.btn--ghost{
+  background: transparent;
+  color: var(--text);
+}
