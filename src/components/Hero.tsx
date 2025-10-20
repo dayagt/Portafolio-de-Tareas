@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
 
        <div className="right">
   <div className="photo">
-    <img className="avatar-full" src="/Perfil.JPG" alt="Foto de perfil" />
+    <img className="avatar-full" src="/perfil.JPG" alt="Foto de perfil" />
   </div>
 </div>
 
