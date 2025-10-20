@@ -1,4 +1,11 @@
 /* src/App.css */
+:root {
+  --accent: #2ecc71;     /* Verde esmeralda principal */
+  --accent2: #27ae60;    /* Variante más profunda */
+  --text: #e8fff3;       /* Texto claro sobre fondo oscuro */
+  --muted: #a0d8b0;      /* Verde suave para textos secundarios */
+  --shadow: 0 12px 36px rgba(46, 204, 113, 0.25); /* Sombra con tono verde */
+}
 .navbar{
   position:sticky; top:0; z-index:30;
   background:rgba(8, 14, 25, .7);
