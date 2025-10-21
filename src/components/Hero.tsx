@@ -1,3 +1,4 @@
+import perfil from '../assets/Perfil.jpg'; // ajusta la ruta según tu estructura
 import React from "react";
 
 const Hero: React.FC = () => {
@@ -21,8 +22,8 @@ const Hero: React.FC = () => {
 
        <div className="right">
   <div className="photo">
-    <img className="avatar-full" src="/Perfil.jpg" alt="Foto de perfil" />
-  </div>
+  <img className="avatar-full" src={perfil} alt="Foto de perfil" />
+</div>
 </div>
 
 
