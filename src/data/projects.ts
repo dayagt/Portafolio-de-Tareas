@@ -15,7 +15,7 @@ export const projects: Project[] = [
     description: "CV online con secciones y estilos coherentes.",
     image: "/cv.jpg",            // pon la imagen en /public (o usa ruta absoluta)
     netlify: "",
-    github: "https://github.com/dayagt/repositorio-prueba",
+    github: "https://dayagt.github.io/hoja-deVida/",
     tags: ["React", "UI"]
   },
   {
